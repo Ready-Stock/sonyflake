@@ -16,7 +16,7 @@ var machineID uint64
 
 func init() {
 	var st Settings
-	st.StartTime = time.Now()
+	st.StartTime = time.Date(2018, 7, 20, 0, 0, 0, 0, time.UTC)
 
 	sf = NewSonyflake(st)
 	if sf == nil {
@@ -36,7 +36,9 @@ func nextID(t *testing.T) uint64 {
 	}
 	return id
 }
-
+//161113182306316
+//161131586912268
+//161151031705612
 func TestSonyflakeOnce(t *testing.T) {
 	sleepTime := uint64(50)
 	time.Sleep(time.Duration(sleepTime) * 10 * time.Millisecond)
